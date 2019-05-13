@@ -1,5 +1,5 @@
 var orm = require("../config/orm.js");
-
+//Send info to be processed by ORM
 var burger = {
   selectAll: function(cb) {
     orm.selectAll("burgers", function(res) {

@@ -1,6 +1,6 @@
 var mysql = require("mysql");
 var connection;
-
+//check to see if jawsDB is being used or use connection as listed
 if (process.env.JAWSDB_URL) {
    connection = mysql.createConnection(process.env.JAWSDB_URL);
 } else {
@@ -13,7 +13,7 @@ if (process.env.JAWSDB_URL) {
   })
 };
 
-
+//connect and print connection id
 connection.connect(function(err) {
   if (err) {
     console.error("error connecting: " + err.stack);

@@ -3,7 +3,7 @@ var express = require("express");
 var router = express.Router();
 
 var burger = require("../models/burger.js");
-
+//Find all burger data
 router.get("/", function(req, res) {
   burger.selectAll(function(data) {
     var hbsObject = {
@@ -13,7 +13,7 @@ router.get("/", function(req, res) {
     res.render("index", hbsObject);
   });
 });
-
+//Make a tasty burger to eat
 router.post("/", function(req, res) {
   burger.insertOne([
     "burger_name", "devoured"
@@ -23,7 +23,7 @@ router.post("/", function(req, res) {
     res.redirect("/");
   });
 });
-
+//Eat those tasty burgers
 router.post('/api/burgers/:id', function(req, res) {
   var condition = "id = " + req.params.id;
 
